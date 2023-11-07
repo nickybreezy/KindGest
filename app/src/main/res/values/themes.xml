@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.KindGest" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/backgroundBlack</item>
+        <item name="android:windowBackground">@color/backgroundBlack</item>
+        <item name="android:textColorPrimary">@color/textYellow</item>
+
+    </style>
+
+    <style name="Theme.KindGest" parent="Base.Theme.KindGest" />
+</resources>
