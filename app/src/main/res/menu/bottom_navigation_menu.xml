@@ -1,16 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_item1"
-        android:title="Item 1"
-        android:icon="@drawable/ic_action_name" />
+        android:id="@+id/feed"
+        android:title="Feed"
+        android:icon="@drawable/ic_feed" />
 
     <item
-        android:id="@+id/menu_item2"
-        android:title="Item 2"
+        android:id="@+id/create_post"
+        android:title="Create Post"
         android:icon="@drawable/ic_action_name" />
 
-    <item
-        android:id="@+id/menu_item3"
-        android:title="Item 3"
-        android:icon="@drawable/ic_action_name" />
 </menu>
