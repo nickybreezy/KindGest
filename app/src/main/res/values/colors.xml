@@ -5,5 +5,7 @@
     <color name="backgroundBlack">#333333</color>
     <color name="textYellow">#F2B134</color>
     <color name="textRed">#FF6B6B</color>
+    <color name="textGreen">#33CC99</color>
+
 
 </resources>
