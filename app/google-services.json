@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "662376766010",
+    "firebase_url": "https://kindgest-edabe-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kindgest-edabe",
+    "storage_bucket": "kindgest-edabe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662376766010:android:3b1b6e8399c999f799b303",
+        "android_client_info": {
+          "package_name": "com.example.kindgest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfQJcfTyrldUVozNMw1rA8ROGWlon_T-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
