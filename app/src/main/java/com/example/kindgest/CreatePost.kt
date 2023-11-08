@@ -19,6 +19,7 @@ class CreatePost : AppCompatActivity() {
     private val GALLERY_REQUEST_CODE = 123
     private var selectedPhotoUri: Uri? = null
     private lateinit var selectedImageNameTextView: TextView
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("CreatePostActivity", "onCreate() called")
@@ -30,7 +31,14 @@ class CreatePost : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent, GALLERY_REQUEST_CODE)
         }
+
+        var closeButton = findViewById<Button>(R.id.closeButton)
+        closeButton.setOnClickListener {
+            val closeIntent = Intent(this, Feed::class.java)
+            startActivity(closeIntent)
+        }
     }
+
     @SuppressLint("Range")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
