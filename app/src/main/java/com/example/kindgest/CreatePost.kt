@@ -44,8 +44,8 @@ class CreatePost : AppCompatActivity() {
         selectedImageNameTextView = findViewById(R.id.selectedImageName)
         TitleText = findViewById(R.id.TitleText)
         DescText = findViewById(R.id.DescText)
-        CategoryText = findViewById(R.id.CategoryText)
-        LocationText = findViewById(R.id.LocationText)
+        CategoryText = findViewById(R.id.CategoryView)
+        LocationText = findViewById(R.id.LocationView)
         btnUploadPost = findViewById(R.id.btnUploadPost)
 
         dbRef = FirebaseDatabase.getInstance("https://kindgest-edabe-default-rtdb.europe-west1.firebasedatabase.app").getReference("Posts")
@@ -64,6 +64,12 @@ class CreatePost : AppCompatActivity() {
         closeButton.setOnClickListener {
             val closeIntent = Intent(this, Feed::class.java)
             startActivity(closeIntent)
+        }
+
+        var categoryButton = findViewById<Button>(R.id.CategoryButton)
+        categoryButton.setOnClickListener {
+            val categoryIntent = Intent(this, Categories::class.java)
+            startActivity(categoryIntent)
         }
     }
     private fun savePostData() {

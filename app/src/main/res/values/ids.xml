@@ -3,6 +3,9 @@
     <item name="fragment_container_view_tag" type="id"/>
     <item name="special_effects_controller_view_tag" type="id"/>
     <item name="visible_removing_fragment_view_tag" type="id"/>
+    <item name="selectImageButton" type="id" />
+    <item name="create_post" type="id" />
+    <item name="feed" type="id" />
     <declare-styleable name="Fragment">
         <attr name="android:name"/>
         <attr name="android:id"/>
