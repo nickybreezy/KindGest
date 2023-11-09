@@ -20,9 +20,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Check if the fragment is being recreated
-        if (savedInstanceState != null) {
-            return null
-        }
+
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.feed, container, false)
@@ -87,10 +85,10 @@ class Feed : AppCompatActivity() {
         }
 
         // Load the initial fragment
-        if (savedInstanceState == null) {
-            currentFragment = HomeFragment()
-            loadFragment(currentFragment!!)
-        }
+//        if (savedInstanceState == null) {
+//            currentFragment = HomeFragment()
+//            loadFragment(currentFragment!!)
+//        }
     }
 
     private fun loadFragment(fragment: Fragment) {
@@ -100,26 +98,26 @@ class Feed : AppCompatActivity() {
             .commit()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.bottom_navigation_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.create_post -> {
-                val intent = Intent(this, CreatePost::class.java)
-                startActivity(intent)
-                return true
-            }
-
-            R.id.feed -> {
-                // Do nothing or handle differently, since you are already on the Feed activity
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        val inflater: MenuInflater = menuInflater
+//        inflater.inflate(R.menu.bottom_navigation_menu, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.create_post -> {
+//                val intent = Intent(this, CreatePost::class.java)
+//                startActivity(intent)
+//                return true
+//            }
+//
+//            R.id.feed -> {
+//                // Do nothing or handle differently, since you are already on the Feed activity
+//                return true
+//            }
+//            else -> return super.onOptionsItemSelected(item)
+//        }
+//    }
 }
 
