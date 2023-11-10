@@ -1,4 +1,4 @@
-package com.example.kindgest
+package com.example.kindgest.models
 
 data class PostModel ( var postid: String? = null,
                        var image: String? = null,
