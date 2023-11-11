@@ -1,5 +1,4 @@
-package com.example.kindgest
-import android.annotation.SuppressLint
+package com.example.kindgest.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,18 +7,19 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.provider.MediaStore
-
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.util.UUID
 import android.net.Uri
 import android.app.Activity
 import android.widget.TextView
 import android.widget.EditText
 import android.provider.OpenableColumns
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.database.FirebaseDatabase
 import android.widget.Toast
-import com.google.firebase.database.DatabaseError
+import com.example.kindgest.models.PostModel
+import com.example.kindgest.R
 
 
 class CreatePost : AppCompatActivity() {
@@ -32,7 +32,8 @@ class CreatePost : AppCompatActivity() {
     private lateinit var DescText: EditText
     private lateinit var CategoryText: EditText
     private lateinit var LocationText: EditText
-
+    private lateinit var storage: FirebaseStorage
+    private lateinit var storageRef: StorageReference
     private lateinit var dbRef: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,9 +48,9 @@ class CreatePost : AppCompatActivity() {
         CategoryText = findViewById(R.id.CategoryView)
         LocationText = findViewById(R.id.LocationView)
         btnUploadPost = findViewById(R.id.btnUploadPost)
-
         dbRef = FirebaseDatabase.getInstance("https://kindgest-edabe-default-rtdb.europe-west1.firebasedatabase.app").getReference("Posts")
-
+        storage = FirebaseStorage.getInstance()
+        storageRef = storage.reference
         btnUploadPost.setOnClickListener {
       savePostData()
         }
@@ -111,18 +112,39 @@ class CreatePost : AppCompatActivity() {
             dbRef.child(postID).setValue(post).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Post added successfully", Toast.LENGTH_LONG).show()
-                    selectedPhotoUri = null
-                    TitleText.setText("")
-                    DescText.setText("")
-                    CategoryText.setText("")
-                    LocationText.setText("")
-                    TitleText.requestFocus()
+
+                    // Upload the image to Firebase Storage
+                    val filename = UUID.randomUUID().toString()
+                    val imageRef = storageRef.child("images/$filename")
+
+                    imageRef.putFile(selectedPhotoUri!!)
+                        .addOnSuccessListener {
+                            // Get the download URL for the uploaded image
+                            imageRef.downloadUrl.addOnSuccessListener { uri ->
+                                val imageUrl = uri.toString()
+
+                                // Update the post with the image URL
+                                dbRef.child(postID).child("image").setValue(imageUrl)
+
+                                // Clear UI and reset variables
+                                selectedPhotoUri = null
+                                TitleText.setText("")
+                                DescText.setText("")
+                                CategoryText.setText("")
+                                LocationText.setText("")
+                                TitleText.requestFocus()
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            // Handle the error
+                            Toast.makeText(this, "Failed to upload image: ${exception.message}", Toast.LENGTH_LONG).show()
+                        }
                 } else {
                     Toast.makeText(this, "Failed to add post: " + task.exception?.message, Toast.LENGTH_LONG).show()
                 }
             }
         } else {
-           println("Error")
+            println("Error")
             Toast.makeText(this, "Failed to add post", Toast.LENGTH_LONG).show()
         }
     }

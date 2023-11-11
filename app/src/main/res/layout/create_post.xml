@@ -106,15 +106,15 @@
 
     <TextView
         android:id="@+id/selectedImageName"
-        android:layout_width="200dp"
+        android:layout_width="379dp"
         android:layout_height="30dp"
         android:text="Selected"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/HorizontalLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectImageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.129" />
 
     <View
         android:id="@+id/HorizontalLine"
@@ -149,8 +149,6 @@
         android:layout_height="48dp"
         android:backgroundTint="#D9D9D9"
         android:inputType="text"
-        android:textColor="@color/textRed"
-        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.267"
