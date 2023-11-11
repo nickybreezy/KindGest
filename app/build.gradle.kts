@@ -38,6 +38,8 @@ android {
 }
 
 
+    // Used for the MaterialButton
+    implementation("com.google.android.material:material:1.4.0")
 
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
@@ -45,6 +47,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation("androidx.cardview:cardview:1.0.0")
