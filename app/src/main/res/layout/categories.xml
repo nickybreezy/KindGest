@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableTint="@color/black"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/HomeArrowButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="132dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=">"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/HorizontalLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/HomeCategory"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HomeCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="44dp"
+        android:text="Home"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeButton" />
+
+    <EditText
+        android:id="@+id/HorizontalLine"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:backgroundTint="#D9D9D9"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeCategory"
+        android:importantForAutofill="no"/>
+
+    <Button
+        android:id="@+id/EntertainmentArrowButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="120dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=">"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/EntertainmentCategory"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine" />
+
+    <TextView
+        android:id="@+id/EntertainmentCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Entertainment"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine" />
+
+    <EditText
+        android:id="@+id/HorizontalLine2"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:backgroundTint="#D9D9D9"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EntertainmentCategory"
+        android:importantForAutofill="no"/>
+
+    <Button
+        android:id="@+id/ClothingArrowButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="120dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=">"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ClothingCategory"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine2" />
+
+    <TextView
+        android:id="@+id/ClothingCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Clothing"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine2" />
+
+    <EditText
+        android:id="@+id/HorizontalLine3"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:backgroundTint="#D9D9D9"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ClothingCategory"
+        android:importantForAutofill="no"/>
+
+    <Button
+        android:id="@+id/PetSuppliesArrowButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="120dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=">"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toEndOf="@+id/ClothingCategory"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine3" />
+
+    <TextView
+        android:id="@+id/PetSuppliesCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Pet Supplies"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine3" />
+
+    <EditText
+        android:id="@+id/HorizontalLine4"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:backgroundTint="#D9D9D9"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PetSuppliesCategory"
+        android:importantForAutofill="no"/>
+
+    <Button
+        android:id="@+id/HobbiesArrowButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="120dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text=">"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toEndOf="@+id/ClothingCategory"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine4" />
+
+    <TextView
+        android:id="@+id/HobbiesCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Hobbies"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalLine4" />
+
+    <EditText
+        android:id="@+id/HorizontalLine5"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:backgroundTint="#D9D9D9"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HobbiesCategory"
+        android:importantForAutofill="no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
