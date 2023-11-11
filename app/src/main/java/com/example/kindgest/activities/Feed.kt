@@ -8,6 +8,7 @@ import android.content.Intent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kindgest.R
@@ -76,38 +77,19 @@ class Feed : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.bottom_navigation_menu,menu)
-        return true
+        menuInflater.inflate(R.menu.bottom_navigation_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.create_post -> {
-
-                val intent = Intent(this, CreatePost::class.java)
-                startActivity(intent)
-                return true
-            }
-
-
-            R.id.feed -> {
-                val intent = Intent(this, Feed::class.java)
-                startActivity(intent)
-                return true
-
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
+      when (item.itemId) {
+          R.id.feed -> {
+              Toast.makeText(this, "Menu Item is Pressed", Toast.LENGTH_SHORT).show()
+              val intent = Intent(this, CreatePost::class.java)
+              startActivity(intent)
+              return true
+          }
+      }
+      return super.onOptionsItemSelected(item)
+      }
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        val id = item.itemId
-//        if (id == R.id.create_post) {
-//            val intent = Intent(
-//                this, CreatePost ::class.java)
-//            startActivity (intent)
-//        }
-//        return true
-//    }
-
-}

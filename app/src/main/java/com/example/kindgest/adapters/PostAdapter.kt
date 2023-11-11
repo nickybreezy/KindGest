@@ -23,6 +23,7 @@ class PostAdapter (private val postList: ArrayList<PostModel>) : RecyclerView.Ad
             .placeholder(R.drawable.placeholder) // placeholder image while loading
             .error(R.drawable.error) // image to show in case of error
             .into(holder.ivPostImage)
+        holder.tvLocation.text = currentPost.location
     }
 
 
@@ -34,6 +35,7 @@ return  postList.size
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 val tvPostTitle : TextView = itemView.findViewById(R.id.tvPostTitle)
   val ivPostImage : ImageView = itemView.findViewById(R.id.ivPostImage)
+    val tvLocation : TextView = itemView.findViewById(R.id.tvLocation)
     }
 
 }

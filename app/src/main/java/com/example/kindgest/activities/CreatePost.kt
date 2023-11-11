@@ -45,8 +45,8 @@ class CreatePost : AppCompatActivity() {
         selectedImageNameTextView = findViewById(R.id.selectedImageName)
         TitleText = findViewById(R.id.TitleText)
         DescText = findViewById(R.id.DescText)
-        CategoryText = findViewById(R.id.CategoryView)
-        LocationText = findViewById(R.id.LocationView)
+        CategoryText = findViewById(R.id.CategoryText)
+        LocationText = findViewById(R.id.LocationText)
         btnUploadPost = findViewById(R.id.btnUploadPost)
         dbRef = FirebaseDatabase.getInstance("https://kindgest-edabe-default-rtdb.europe-west1.firebasedatabase.app").getReference("Posts")
         storage = FirebaseStorage.getInstance()
@@ -66,12 +66,12 @@ class CreatePost : AppCompatActivity() {
             val closeIntent = Intent(this, Feed::class.java)
             startActivity(closeIntent)
         }
-
-        var categoryButton = findViewById<Button>(R.id.CategoryButton)
-        categoryButton.setOnClickListener {
-            val categoryIntent = Intent(this, Categories::class.java)
-            startActivity(categoryIntent)
-        }
+//
+//        var categoryButton = findViewById<Button>(R.id.CategoryButton)
+//        categoryButton.setOnClickListener {
+//            val categoryIntent = Intent(this, Categories::class.java)
+//            startActivity(categoryIntent)
+//        }
     }
     private fun savePostData() {
         Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
@@ -88,12 +88,13 @@ class CreatePost : AppCompatActivity() {
             return
         }
         Log.d("CreatePostActivity", "Image: $image, Title: $title, Desc: $desc, Category: $category, Location: $location")
-        if (title.isEmpty()) {
-            TitleText.error = "Please enter a title"
+        if (title.isEmpty() || title.length > 17) {
+            TitleText.error = "Please enter a title that is less than 17 characters"
             return
         }
-        if (desc.isEmpty()) {
-            DescText.error = "Please enter a description"
+
+        if (desc.isEmpty() || desc.length > 17) {
+            DescText.error = "Please enter a description that is less than 17 characters"
             return
         }
         if (category.isEmpty()) {
@@ -173,15 +174,5 @@ class CreatePost : AppCompatActivity() {
             }
         }
     }
-
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        val inflater: MenuInflater = menuInflater
-//        inflater.inflate(R.menu.bottom_navigation_menu,menu)
-//        return true
-//    }
-
-
-
 
 }
