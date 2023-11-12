@@ -52,5 +52,37 @@
         app:strokeColor="@color/black"
         />
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/buttonUser1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User 1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:onClick="onUser1ButtonClick"
+            app:strokeWidth="1dp"/>
+
+        <Button
+            android:id="@+id/buttonUser2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User 2"
+            android:layout_below="@id/buttonUser1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:onClick="onUser2ButtonClick"
+            app:strokeWidth="1dp"/>
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
